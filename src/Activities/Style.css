@@ -1,0 +1,16 @@
+.Style{
+border-bottom: 2px;
+box-sizing:border-box;
+border: 1px solid #eee;
+padding:20px;
+width:400px;
+margin: 20px auto
+}
+.AddActivity{
+    width: 200px;
+    padding: 0 20px;
+    font-size: 18px;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 20px
+}
