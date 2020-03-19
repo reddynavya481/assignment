@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import Aux from '../hoc/Aux'
 import ViewActivity from '../Activities/ViewActivity'
 import './SignUp.css'
+import axios from 'axios'
 class SignUp extends Component{
     state={
         username:'',
@@ -12,6 +13,7 @@ class SignUp extends Component{
             startTime:[]}],
         
     }
+   
     inputChangeHandler=(e)=>{
         console.log(e.target.value+" "+e.target.name)
         this.setState({
@@ -28,6 +30,11 @@ class SignUp extends Component{
             console.log(JSON.parse(localStorage.getItem(this.state.username)))
             
         }
+        const data={
+            username:this.state.username,
+            password:this.state.password
+        }
+        axios.post('http://localhost:3000/users',data)
     }
     render(){
         return(
