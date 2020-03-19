@@ -4,6 +4,7 @@ import { TimePickerComponent } from '@syncfusion/ej2-react-calendars'
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './Style.css'
+import axios from 'axios'
 class AddActivity extends Component{
     state={
         taskname:'',
@@ -64,6 +65,13 @@ class AddActivity extends Component{
         endtime:"00:00",
         date:new Date() 
          })
+         const data1={
+             activity:this.state.taskname,
+             startTime:this.state.starttime,
+             endTime:this.state.endTime,
+             date:this.state.date
+         }
+         axios.post('http://localhost:3000/activity',data1)
         alert("added ur activity")
     }
     handleChangedate=date=>{
@@ -96,4 +104,4 @@ render(){
     )
 }
 }
-export default Activities
+export default AddActivity
